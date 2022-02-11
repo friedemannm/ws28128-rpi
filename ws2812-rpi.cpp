@@ -59,11 +59,11 @@ void NeoPixel::show(){
     unsigned int wireBit = 0;
     Color_t color;
 
-    for(i=0; i<numLEDs; i++) {
-        LEDBuffer[i].r *= brightness;
-        LEDBuffer[i].g *= brightness;
-        LEDBuffer[i].b *= brightness;
-        colorBits = ((unsigned int)LEDBuffer[i].r << 8) | ((unsigned int)LEDBuffer[i].g << 16) | LEDBuffer[i].b;
+    for(i=0; i< numLEDs; i++) {
+        int r = LEDBuffer[i].r * brightness;
+        int g = LEDBuffer[i].g * brightness;
+        int b = LEDBuffer[i].b * brightness;
+        colorBits = ((unsigned int) r << 8) | ((unsigned int) g << 16) | b;
 
         for(j=23; j>=0; j--) {
             colorBit = (colorBits & (1 << j)) ? 1 : 0;
