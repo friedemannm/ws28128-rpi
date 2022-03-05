@@ -1,7 +1,7 @@
 #ifndef QWS2812B_H
 #define QWS2812B_H
 
-#include "ws28128-rpi/ws2812-rpi.h"
+#include "ws2812-rpi.h"
 #include <QObject>
 #include <QColor>
 
